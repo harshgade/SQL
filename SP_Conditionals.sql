@@ -131,6 +131,7 @@ begin
    end loop;
 end;
 $$;
+-- emp_record is like 'i' which we use as an iterator in range in for loop
 -- emp_record.id , emp_record.name (means jo employee iterate hora hai uski info print karni hai aur har bari 
 -- employee change hoga iteration mai )
 
