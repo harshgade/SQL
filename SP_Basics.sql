@@ -51,8 +51,8 @@ CALL get_salary(1,null) -- mention null cause OUTparameter cannot accept input v
 
 
 
--- Create Stored Procedure to update salary based on id
---  (salary : INOUT cause we want user to mention salary  update it for that id & we also want to retrieve salary )
+-- Create Stored Procedure to update New salary based on id
+--  (new_salary : INOUT cause we want to mention new_salary  update it for that id & we also want to retrieve updated new_salary )
 
 CREATE PROCEDURE update_salary (IN emp_id int,INOUT new_salary int)
 LANGUAGE plpgsql
