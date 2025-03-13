@@ -103,6 +103,9 @@ select id , name , department , salary ,
    sum(salary) over (partition by department order by id asc) as salarysum
 from employee;
 
+-- If we want to show in one row itself the sum of the particular department 
+select department , sum(salary) from employee group by department
+
 
 -- Q11) Find the average salary in each department.
 -- partion by department 
