@@ -45,6 +45,8 @@ declare
 begin
      -- retrieve salary for that employee_id
 	 select salary into emp_salary from employee where id = emp_id;
+         -- print salary befor giving bonus 
+         raise notice 'employee id % before bonus ',emp_id;
 	 -- calculate bonus 
 	 bonus := emp_salary * 0.10;
 	 -- using raise notise display the emp_id and their bonus
