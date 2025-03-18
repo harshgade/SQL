@@ -67,11 +67,12 @@ begin
    -- add to receiver
    UPDATE accounts SET balance = balance + transfer_amount WHERE account_id = receiver_id;
 
-   COMMIT; -- save all the changes to the table
 
    EXCEPTION WHEN others THEN -- usued to handle all the exceptions than may occur 
        ROLLBACK;
 	   raise notice 'Transaction Failed Rolling Back The Changes';
+
+   COMMIT; -- save all the changes to the table at the end if nothing  exception occurs 
 end;
 $$;
 
