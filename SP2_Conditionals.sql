@@ -119,6 +119,23 @@ $$;
 FOR Loop 
 ---------------------
 
+-- Create an stored procedure to print all the employees id,name,salary (the below procedure will print entire employees id , name , salary)
+-- here we do not need to mention any range 
+create procedure list_employees()
+language plpgsql
+as $$
+  declare employee RECORD;
+begin 
+  FOR employee IN select id , name , salary FROM employee LOOP
+	raise notice 'id %  name %   salary % ',employee.id,employee.name,employee.salary;
+  END LOOP;
+end;
+$$;
+
+call list_employees()  -- this will list all employees data
+
+
+	
 -- Create Stored Procedure using For loop : to print Employee id and Employee name between an range of employee ID
 
 create procedure employee_info(IN start_id int , IN end_id int)
